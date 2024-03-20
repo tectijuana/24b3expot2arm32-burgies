@@ -26,6 +26,7 @@ Exposición: Integración de código Assembly con C
 Estudiantes:
 Morales Calvo Ángel Omar - 21212000
 López Machado Oscar Roberto - 21211978
+Narvaez Mata Alejandro - 22210325
 </pre>
 
 ## Resumen
