@@ -1,42 +1,7 @@
-
-<!---
-   Para comentarios usar este bloque para documentar pendientes, secuencias, etc.
---->
-
-
-![](https://s3.amazonaws.com/videos.pentesteracademy.com/videos/badges/low/arm-assembly.png)
-
-Borrar y modificar README
-
-# Utilizar los dos directorios
-
-- code  - ahi depositar sus programas los ***archivos extensión *.s****  (Source File) algunos autores en x86 de ponen .asm y en otras plataformas ARM compatibles la extension *.s
-- Todo programa lleva su comentario en la parte de arriba, objetivo y nombre del programador minimo, como templete
-- images  - de haber algo de pantallas ahi se presentaran, su busca documentarlas en MARKDOWN el código es:
-
-``` ![](images/---archivo.jpg---) recordar que no lleva espacios```
-
-<!---
-  Los nombres de las imagenes no deben cambiar de preferenci el nombre del programa como:  KIOSKO.cpp (su pantallas serian KISOCO.jpg, KIOSCO-1.jpg, KIOSCO-2.jpg ... )
-  Y asi procurar estar agrupados.
---->
-
-
-
-- Programa en MarkDown es inicia con tres tildes * (`) sin espacio, seguido de el lenguaje de programacion, al final del codigo se poner otra vez los mismos tilder..
-
-No se usan espacios en nombres de archivos, usar los nombres estilo camelCase (primera palabra minusculas, mayuscula solo la 1ra letra de cada palabra subsecuente):  ejemplo: sensorHumo, etc.
-
-Suerte.
-
-
-
-------
+# Integración de código Assembly con C
 
 <pre>
-
-	<p align=center>
-
+<p align=center>
 Tecnológico Nacional de México
 Instituto Tecnológico de Tijuana
 
@@ -44,7 +9,7 @@ Departamento de Sistemas y Computación
 Ingeniería en Sistemas Computacionales
 
 Semestre:
-Febrero - Junio 2022
+Febrero - Junio 2024
 
 Materia:
 Lenguajes de interfaz
@@ -53,82 +18,125 @@ Docente:
 M.C. Rene Solis Reyes 
 
 Unidad:
-1
+2
 
 Título del trabajo:
-Ejercicios ......
+Exposición: Integración de código Assembly con C
 
-Estudiante:
-.......
-
-	</p>
-
+Estudiantes:
+Morales Calvo Ángel Omar - 21212000
+López Machado Oscar Roberto - 21211978
+Narvaez Mata Alejandro - 22210325
+Cuevas Estrada Joel - 22210298
+Alvarado Cardona Antonio - 22210279
 </pre>
 
-<pre>
+## Resumen
+Repositorio que contiene la presentación sobre el tema "Integración de código Assembly con C" en el cual
+se muestran y describen algunas razones por las que tiene sentido integrar Assembly dentro de código fuente
+escrito en C, y de qué forma se hace dicha integración. Se muestra un ejemplo práctico de código de C enlazado
+con un archivo objeto escrito en código Assembly para calcular el factorial de un número dado.
 
-	<p align=left>
+## Presentación
+![](imagen/1.png)
+![](imagen/2.png)
+![](imagen/3.png)
+![](imagen/4.png)
+![](imagen/5.png)
+![](imagen/6.png)
+![](imagen/7.png)
+![](imagen/8.png)
+![](imagen/9.png)
 
-Repositorio en el cual se desarrollaron distintos ejercicios en el lenguaje de 
-programacion c++, tomados del libro "Problemas para resolver con computadora" 
-1ra edicion (1985), por el autor Donald D. Spencer. 
+### Ejemplo
+A continuación se presenta un programa en C para calcular un factorial dado, utilizando una función externa definida en un archivo escrito en código Assembly.
 
-Los ejercicios corresponden al capitulo 6 del libro, entre las paginas 77 a 86.
-Se realizaron 25 problemas debido a la entrega fuera del limite de tiempo.
+```C
+#include <stdio.h>
 
-CONDICIONES:
+// Declaración de la función calcularFactorial que está definida en código Assembly
+extern int calcularFactorial(int n);
 
-	EXTEMPORÁNEOS DE LA FECHA DE ENTREGA, despues del 25 de marzo y 1 segundo:
+int main(int argc, char** argv) {
+    int num; // Variable para almacenar el número ingresado por el usuario
 
-	-Solo 25 problemas a resolver y están en aleatorio las condiciones de uso, 
-		algunos simples otros de recordar, etc. CAPITULO 6 en adelante.
+    // Solicitar al usuario que ingrese un número
+    printf("Ingresa un número: ");
+    scanf("%d", &num); // Leer el número ingresado por el usuario y almacenarlo en la variable num
 
-	-Agregar las indicaciones de los criterios de la rùbrica
-	
-RÚBRICA:
+    // Llamar a la función calcularFactorial para calcular el factorial del número ingresado
+    int factorial = calcularFactorial(num);
 
-        Todo problema es necesario siga el templete OBLIGATORIO para entregar el 
-		problema codificado, usted puede correr sus programas con su estilo 
-		pero ya que este funcionando, debe arreglarlo a presentación para su 
-		evaluación.
+    // Mostrar el resultado del factorial
+    printf("\nEl factorial de %d es: %d\n", num, factorial);
 
-        MODIFICAR LA PORTADA CON MARKDOWN Y ACTUALIZARLA, esta libre de cambiar 
-		todo.
-        Los archivos deben tener su extensión .CPP (no .txt, etc.)
+    return 0; // Devolver un valor indicando que el programa se ejecutó correctamente
+}
+```
 
-	Los problemas están en la relación siguiente:
-	
-	- 100% Sigue el templete proporcionado por el docente y corren 10 
-		Problemas (o si incremento en programas por supuesta dificultad) 
-		completamente en GITHUB Classroom (no repositorio personal),  los 
-		archivos deben tener su extensión .CPP (no .txt, .EXE, etc.) acomodados 
-		en dentro de un directorio  (sin acentos o simbolos) SOLO FUENTES, y 
-		modifica el README.md que sea una portada.
-	- 80% Sigue el templete proporcionado por el docente y corre 8 Problemas 
-		(o si incremento en programas por supuesta dificultad) completamente 
-		en GITHUB Classroom (no repositorio personal), los archivos deben 
-		tener su extensión .CPP (no .txt, etc.) acomodados en dentro de un 
-		directorio (sin acentos o simbolos) SOLO FUENTES, y modifica el 
-		README.md que sea una portada.
-	- 70% Sigue el templete proporcionado por el docente y corre 7 Problemas 
-		(o si incremento en programas por supuesta dificultad) completamente 
-		en GITHUB Classroom (no repositorio personal), los archivos deben 
-		tener su extensión .CPP (no .txt, etc.) acomodados en dentro de un 
-		directorio (sin acentos o simbolos) SOLO FUENTES, y modifica el 
-		README.md que sea una portada.
-	- 50 % EVITA Y NO USA el templete proporcionado por el docente sus Problemas 
-		(o si incremento en programas por supuesta dificultad) completamente 
-		en GITHUB Classroom (no repositorio personal) con mas de 7 problemas 
-		resueltos, los archivos NO tener su extensión .CPP y  puede o no estar 
-		acomodados en dentro de un directorio (sin acentos o simbolos) 
-		SOLO FUENTES, y modifica el README.md que sea una portada.
+Cómo se observa, la función `calcularFactorial` se declara por medio de `extern` el cual indica al compilador que la definición de la función (su cuerpo) se encuentra en otro lado, y que el enlace de la función se resolverá en tiempo de enlace. La función `calcularFactorial` está definida por el siguiente código de Assembly escrito para 'Armv7l', es decir, la arquitectura ARM de 32 bits.
 
-ENTREGA:
+```ASM
+.global calcularFactorial    @ Declara que calcularFactorial es visible para el enlazador
+.type calcularFactorial, %function   @ Especifica el tipo de calcularFactorial como una función
 
-	URL del GitHub Classroom, y recuerde arreglar la PORTADA, quitar todos los 
-		elementos extras del templete, acomodarlo bien para su presentación 
-		solo lo necesario.
+calcularFactorial:
+        stmfd sp!, {lr}        @ Almacena el registro lr (dirección de retorno) en la pila
+        mov r1, r0             @ Mueve el valor de r0 (número para calcular factorial) a r1
+        mov r2, #1             @ Mueve el valor 1 a r2 (inicializa el acumulador del factorial)
+        mov r3, #1             @ Mueve el valor 1 a r3 (inicializa el contador)
+        bl mult                @ Llama a la función mult para calcular el factorial
 
-	</p>
+mult:
+        cmp r1, #0             @ Compara r1 con 0
+        ble return             @ Si r1 es menor o igual a 0, salta a return
+        mul r3, r2, r1         @ Multiplica r2 (acumulador) por r1 y almacena el resultado en r3
+        mov r2, r3             @ Mueve el resultado de la multiplicación a r2
+                               @ r2 funciona como auxiliar o sustituto de 3,
+                               @ ya que no se puede tener el mismo registro en Rd y Rm: mul Rd, Rm, Rs => Rd = Rm * Rs
+                               @ mul Rd, Rm, Rs => Rd = Rm * Rs, de otro modo, podríamos hacer (mov r2, r2, r1) => r2 = r2 * r1
+        sub r1, r1, #1         @ Resta 1 a r1 (decrementa el contador)
+        bl mult                @ Llama recursivamente a la función mult
 
-</pre>
+return:
+        mov r0, r3             @ Mueve el resultado del factorial (en r3) a r0 (registro de retorno)
+        ldmfd sp!, {lr}        @ Carga el registro lr (dirección de retorno) desde la pila
+        bx lr                  @ Salta a la dirección de retorno
+```
+
+El código en pocas palabras utiliza tres registros para el cálculo del factorial, `r0` el cual es el registro que almacena el argumento de la función, `r1` que se utiliza como contador que irá de `r0` hasta 0, `r2` el cual funciona como un acumulador secundario para el factorial, y `r3` en el que se almacena el cálculo del factorial. Un ejemplo sería el factorial de 3:
+
+```
+  Inicialización:
+    r0 = 3
+    r1 = 3 @ después de copiar el valor de r0 a r1
+    r2 = 1
+    r3 = 1
+
+  Cálculo:
+    - r1 es mayor a 0
+    r3 = r2 * r1 (r3 = 1 * 3 = 3)
+    - se decrementa r1 (r1 = 2)
+    r2 = r3 (r2 = 3)
+  
+    - r1 es mayor a 0
+    r3 = r2 * r1 (r3 = 3 * 2 = 6)
+    - se decrementa r1 (r1 = 1)
+    r2 = r3 (r2 = 6)
+  
+    - r1 es mayor a 0
+    r3 = r2 * r1 (r3 = 6 * 1 = 6)
+    - se decrementa r1 (r1 = 0)
+    r2 = r3 (r2 = 6)
+  
+    - r1 no es mayor que 0
+    r0 = r3 (r0 = 6)
+    - se retorna r0
+```
+
+Para poder integrar ambos archivos, primero se ensambla el código Assembly con `as -o <nombre-objeto-a>.o <nombre-archivo-s>.s`. Luego, se compila el código de C con `gcc -o <nombre-objeto-c>.o -c <nombre-archivo-c>.c`. Finalmente, se crea el ejecutable utilizando ambos códigos objeto con `gcc -o <nombre-ejecutable> <nombre-objeto-c>.o <nombre-objeto-s>.s`. Se ejecuta con el siguiente comando: `./<nombre-ejecutable>`.
+
+De este modo, al ejecutarse, el programa nos pedirá ingresar un número, y cuando reciba un entero, este utilizará la función `calcularFactorial` para obtener el factorial del número dado, y lo desplegará en consola.
+
+![](imagen/10.png)
+![](imagen/11.png)
